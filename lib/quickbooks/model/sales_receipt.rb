@@ -8,8 +8,12 @@ module Quickbooks
       xml_accessor :id, :from => 'Id', :as => Integer
       xml_accessor :sync_token, :from => 'SyncToken', :as => Integer
       xml_accessor :meta_data, :from => 'MetaData', :as => MetaData
+      xml_accessor :custom_fields, :from => 'CustomField', :as => [CustomField]
       xml_accessor :doc_number, :from => 'DocNumber'
-      xml_accessor :placed_on, :from => 'TxnDate', :as => Time
+      xml_accessor :txn_date, :from => 'TxnDate', :as => Date
+      xml_accessor :txn_tax_detail, :from => 'TxnTaxDetail', :as => TransactionTaxDetail
+      xml_accessor :due_date, :from => 'DueDate', :as => Date
+      xml_accessor :balance, :from => 'Balance', :as => BigDecimal, :to_xml => Proc.new { |val| val.to_f }
 
       xml_accessor :line_items, :from => 'Line', :as => [Line]
       xml_accessor :customer_ref, :from => 'CustomerRef', :as => BaseReference
@@ -32,7 +36,7 @@ module Quickbooks
       xml_accessor :private_note, :from => 'PrivateNote'
 
       # readonly
-      xml_accessor :total, :from => 'TotalAmt', :as => BigDecimal
+      xml_accessor :total_amount, :from => 'TotalAmt', :as => BigDecimal
 
       reference_setters :customer_ref, :ship_method_ref, :payment_method_ref, :deposit_to_account_ref
 
