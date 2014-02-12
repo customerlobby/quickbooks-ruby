@@ -34,6 +34,7 @@ module Quickbooks
 
       xml_accessor :customer_memo, :from => 'CustomerMemo'
       xml_accessor :private_note, :from => 'PrivateNote'
+      xml_accessor :class_ref, :from => 'ClassRef', :as => BaseReference
 
       # readonly
       xml_accessor :total_amount, :from => 'TotalAmt', :as => BigDecimal
