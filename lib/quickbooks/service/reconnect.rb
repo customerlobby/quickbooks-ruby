@@ -22,7 +22,7 @@ module Quickbooks
       end
 
       def refresh_tokens
-        parse_response(do_http(:get, @uri))
+        parse_response(do_http(:get, @uri, {}, {}))
       end
 
       private
