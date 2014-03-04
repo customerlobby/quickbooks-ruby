@@ -78,6 +78,7 @@ require 'quickbooks/service/payment'
 require 'quickbooks/service/term'
 require 'quickbooks/service/purchase'
 require 'quickbooks/service/purchase_order'
+require 'quickbooks/service/reconnect'
 
 module Quickbooks
   @@logger = nil
