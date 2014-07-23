@@ -35,7 +35,7 @@ module Quickbooks
         @server_time   = xmldoc.at_xpath("//xmlns:ReconnectResponse//xmlns:ServerTime").content
         if @error_code == '0'
           @oauth_token   = xmldoc.at_xpath("//xmlns:ReconnectResponse//xmlns:OAuthToken").content
-          @oauth_secret  = xmldoc.at_xpath("//xmlns:ReconnectResponse//xmlns:OAuthSecret").content
+          @oauth_secret  = xmldoc.at_xpath("//xmlns:ReconnectResponse//xmlns:OAuthTokenSecret").content
         end
       end
 
