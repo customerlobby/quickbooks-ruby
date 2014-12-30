@@ -35,7 +35,6 @@ module Quickbooks
 
       # readonly
       xml_accessor :total_amount, :from => 'TotalAmt', :as => BigDecimal
-      xml_accessor :txn_tax_detail, :from => 'TxnTaxDetail', :as => TransactionTaxDetail
       xml_accessor :custom_fields, :from => 'CustomField', :as => [CustomField]
       xml_accessor :currency_ref, :from => 'CurrencyRef', :as => BaseReference
       xml_accessor :class_ref, :from => 'ClassRef', :as => BaseReference
