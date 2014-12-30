@@ -8,15 +8,15 @@ Gem::Specification.new do |gem|
   gem.author   = "Cody Caughlan"
   gem.email    = "toolbag@gmail.com"
   gem.homepage = "http://github.com/ruckus/quickbooks-ruby"
-  gem.summary  = "REST API to Quickbooks Online via Intuit Data Services v3"
+  gem.summary  = "REST API to Quickbooks Online"
   gem.license  = 'MIT'
-  gem.description = gem.summary
+  gem.description = "QBO V3 REST API to Quickbooks Online"
 
   gem.files = Dir['lib/**/*']
 
   gem.add_dependency 'oauth'
   gem.add_dependency 'roxml'
-  gem.add_dependency 'nokogiri'
+  gem.add_dependency 'nokogiri' # leave in promiscuous mode so as to not conflict with quickeebooks gem
   gem.add_dependency 'activemodel'
 
   gem.add_development_dependency 'rake'
